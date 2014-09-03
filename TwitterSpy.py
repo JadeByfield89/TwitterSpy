@@ -27,17 +27,16 @@ t = Twitter(auth=OAuth(ACCESS_TOKEN, ACCESS_TOKEN_SECRET, CONSUMER_KEY, CONSUMER
 search_string = input("Enter a search string: ")
 search_interval = input("Enter search interval(seconds)")
 
-
+twitter_name = "@TwitterNameGoesHere"
 
 
 
 def checkTweets(name):
-    #while("User has not exited program")
-    #Checks Nike's last 5 tweets every 30 seconds
+    
 
     try:
         while True:
-            tweets = t.statuses.user_timeline(screen_name="kickzwatch", count=1, exclude_replies=True)
+            tweets = t.statuses.user_timeline(screen_name=twitter_name, count=1, exclude_replies=True)
            
             
 
@@ -67,6 +66,10 @@ def checkTweets(name):
 
                 #Open user's browser and navigate to the URL from the tweet
                 webbrowser.open(url, new=0, autoraise=True)
+
+
+
+                #Alternatively you could write the matched tweet to a file
 
               
                 break
